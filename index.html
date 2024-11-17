@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Bookmark landing page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            container: {
+              center: true,
+            },
+            colors: {
+              softBlue: "hsl(231, 69%, 60%)",
+              softRed: "hsl(0, 94%, 66%)",
+              grayishBlue: " hsl(229, 8%, 60%)",
+              veryDarkBlue: "hsl(229, 31%, 21%)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <div class="overlay sm:hidden"></div>
+      <nav
+        class="flex justify-between items-center p-4 backdrop-blur-md sm:backdrop-blur-none sm:bg-white w-full flex-wrap">
+        <img src="./images/logo-bookmark.svg" class="bg-white" alt="logo" />
+
+        <ul
+          class="flex flex-col sm:flex-row gap-4 items-center order-1 basis-full sm:basis-0">
+          <li class="uppercase min-w-full sm:border-0 sm:min-w-fit text-center">
+            <a href="#">Features</a>
+          </li>
+          <li class="uppercase min-w-full sm:border-0 sm:min-w-fit text-center">
+            <a href="#">pricing</a>
+          </li>
+          <li class="uppercase min-w-full sm:border-0 sm:min-w-fit text-center">
+            <a href="#">contact</a>
+          </li>
+          <button
+            class="bg-transparent sm:bg-softRed uppercase py-1 px-4 rounded-sm text-white border hover:bg-white hover:text-softRed hover:border-softRed transition duration-300 ease-in-out">
+            Login
+          </button>
+        </ul>
+        <img
+          id="menuBar"
+          src="./images/icon-hamburger.svg"
+          class="sm:hidden w-7 h-7"
+          alt="menu icon" />
+        <div class="order-2 mx-auto flex gap-7 items-center sm:hidden">
+          <a href="#"
+            ><img src="./images/icon-facebook.svg" alt="icon-facebook"
+          /></a>
+          <a href="#"
+            ><img src="./images/icon-twitter.svg" alt="icon-twitter"
+          /></a>
+        </div>
+      </nav>
+      <div
+        class="grid grid-cols-12 justify-items-center min-h-[100vh] sm:min-h-fit justify-between items-center">
+        <div
+          class="flex flex-col gap-5 col-span-12 lg:col-span-5 p-10 my-10 sm:my-0 mx-auto">
+          <h1
+            class="text-xl text-center sm:text-4xl text-veryDarkBlue font-bold">
+            A Simple Bookmark Manager
+          </h1>
+          <p class="text-grayishBlue leading-8 text-lg">
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+          <div class="flex gap-3">
+            <button
+              class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out text-sm sm:text-lg">
+              Get it on Chrome
+            </button>
+            <button
+              class="py-2 px-4 rounded-[7px] text-veryDarkBlue border hover:border-veryDarkBlue transition duration-300 ease-in-out text-sm sm:text-lg">
+              Get it on Firefox
+            </button>
+          </div>
+        </div>
+        <div
+          class="overflow-hidden col-span-12 lg:col-start-6 lg:col-span-7 flex justify-center items-center relative before:absolute before:-bottom-1/2 before:-translate-y-1/2 before:translate-x-1/2 before:right-0 before:w-full before:h-4/5 before:-z-10 before:rounded-s-full before:bg-softBlue">
+          <img
+            src="./images/illustration-hero.svg"
+            class="w-fullmax-w-[400px] h-auto object-cover"
+            alt="hero image" />
+        </div>
+      </div>
+    </header>
+
+    <!--///////////================= MAIN=================///////////////// -->
+    <main>
+      <section class="my-11">
+        <div class="text-center flex flex-col items-center gap-16 mb-8">
+          <div class="md:w-2/3">
+            <h2 class="text-veryDarkBlue text-2xl font-bold mb-3">Features</h2>
+            <p class="text-grayishBlue max-w-xl mx-auto">
+              Our aim is to make it quick and easy for you to access your
+              favourite websites. Your bookmarks sync between your devices so
+              you can access them on the go.
+            </p>
+          </div>
+
+          <!--  TAB CONTROLLER -->
+          <div class="flex gap-10">
+            <h5
+              class="tab-title active cursor-pointer hover:text-softRed transition duration-300 text-grayishBlue relative"
+              onclick="changeTab('1')">
+              Simple Bookmarking
+            </h5>
+            <h5
+              class="tab-title cursor-pointer hover:text-softRed transition duration-300 text-grayishBlue relative"
+              onclick="changeTab('2')">
+              Speedy Searching
+            </h5>
+            <h5
+              class="tab-title cursor-pointer hover:text-softRed transition duration-300 text-grayishBlue relative"
+              onclick="changeTab('3')">
+              Easy Sharing
+            </h5>
+          </div>
+        </div>
+
+        <!-- FEATURE 1 SIMPLE BOOKING -->
+        <div
+          id="1"
+          class="tab-content active grid-cols-12 justify-items-center justify-between items-center">
+          <div
+            class="mx-3 col-span-12 lg:col-span-6 flex justify-center items-center relative before:absolute before:-bottom-1/2 before:-translate-y-1/2 before:-translate-x-1/2 left-0 before:w-full before:h-4/5 before:-z-10 before:rounded-e-full before:bg-softBlue">
+            <img
+              src="./images/illustration-features-tab-1.svg"
+              class="w-full max-w-[450px] h-auto object-cover"
+              alt="hero image" />
+          </div>
+          <div
+            class="flex flex-col gap-5 col-span-12 lg:col-span-5 p-10 mx-auto">
+            <h2 class="text-veryDarkBlue text-2xl font-bold mb-3">
+              Bookmark in one click
+            </h2>
+            <p class="text-grayishBlue leading-8 text-lg">
+              Organize your bookmarks however you like. Our simple drag-and-drop
+              interface gives you complete control over how you manage your
+              favourite sites.
+            </p>
+            <div class="flex gap-3">
+              <button
+                class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEATURE 2 SPEEDY SHARING -->
+        <div
+          id="2"
+          class="tab-content grid-cols-12 justify-items-center justify-between items-center">
+          <div
+            class="mx-3 col-span-12 lg:col-span-6 flex justify-center items-center relative before:absolute before:-bottom-1/2 before:-translate-y-1/2 before:-translate-x-1/2 left-0 before:w-full before:h-4/5 before:-z-10 before:rounded-e-full before:bg-softBlue">
+            <img
+              src="./images/illustration-features-tab-2.svg"
+              class="w-full max-w-[450px] h-auto object-cover"
+              alt="hero image" />
+          </div>
+          <div
+            class="flex flex-col gap-5 col-span-12 lg:col-span-5 p-10 mx-auto">
+            <h2 class="text-veryDarkBlue text-2xl font-bold mb-3">
+              Intelligent search
+            </h2>
+            <p class="text-grayishBlue leading-8 text-lg">
+              Our powerful search feature will help you find saved sites in no
+              time at all. No need to trawl through all of your bookmarks.
+            </p>
+            <div class="flex gap-3">
+              <button
+                class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEATURE 3 EASY SHARING -->
+        <div
+          id="3"
+          class="tab-content grid-cols-12 justify-items-center justify-between items-center">
+          <div
+            class="mx-3 col-span-12 lg:col-span-6 flex justify-center items-center relative before:absolute before:-bottom-1/2 before:-translate-y-1/2 before:-translate-x-1/2 left-0 before:w-full before:h-4/5 before:-z-10 before:rounded-e-full before:bg-softBlue">
+            <img
+              src="./images/illustration-features-tab-3.svg"
+              class="w-full max-w-[450px] h-auto object-cover"
+              alt="hero image" />
+          </div>
+          <div
+            class="flex flex-col gap-5 col-span-12 lg:col-span-5 p-10 mx-auto">
+            <h2 class="text-veryDarkBlue text-2xl font-bold mb-3">
+              Share your bookmarks
+            </h2>
+            <p class="text-grayishBlue leading-8 text-lg">
+              Easily share your bookmarks and collections with others. Create a
+              shareable link that you can send at the click of a button.
+            </p>
+            <div class="flex gap-3">
+              <button
+                class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="h-dvh my-11">
+        <div class="text-center flex flex-col items-center gap-16 mb-8">
+          <div class="md:w-2/3">
+            <h2 class="text-veryDarkBlue text-2xl font-bold mb-3">
+              Download the extension
+            </h2>
+            <p class="text-grayishBlue max-w-xl mx-auto">
+              We’ve got more browsers in the pipeline. Please do let us know if
+              you’ve got a favourite you’d like us to prioritize.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-5">
+          <div
+            class="md:basis-3/12 xl:basis-2/12 h-72 flex flex-col items-center justify-between shadow-2xl py-3">
+            <div>
+              <img src="./images/logo-chrome.svg" alt="Chrome" />
+            </div>
+            <div class="text-center">
+              <h5 class="text-mg text-veryDarkBlue mb-1">Add to Chrome</h5>
+              <p class="text-sm text-grayishBlue">Minimum version 62</p>
+            </div>
+            <button
+              class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out">
+              Add & Install Extension
+            </button>
+          </div>
+          <!-- 2nd -->
+          <div
+            class="md:basis-3/12 xl:basis-2/12 h-72 flex flex-col items-center justify-between shadow-2xl py-3 sm:translate-y-20">
+            <div>
+              <img src="./images/logo-firefox.svg" alt="Firefox" />
+            </div>
+            <div class="text-center">
+              <h5 class="text-mg text-veryDarkBlue mb-1">Add to Firefox</h5>
+              <p class="text-sm text-grayishBlue">Minimum version 55</p>
+            </div>
+            <button
+              class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out">
+              Add & Install Extension
+            </button>
+          </div>
+          <!-- 3rd -->
+          <div
+            class="md:basis-3/12 xl:basis-2/12 h-72 flex flex-col items-center justify-between shadow-2xl py-3 sm:translate-y-40">
+            <div>
+              <img src="./images/logo-opera.svg" alt="logo-opera" />
+            </div>
+            <div class="text-center">
+              <h5 class="text-mg text-veryDarkBlue mb-1">Add to Opera</h5>
+              <p class="text-sm text-grayishBlue">Minimum version 46</p>
+            </div>
+            <button
+              class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out">
+              Add & Install Extension
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--========================  ACCORDIONSECTION====================== -->
+
+      <section class="my-12">
+        <div class="grid grid-cols-12">
+          <div
+            class="mx-3 col-span-full sm:col-start-2 sm:col-span-10 md:col-start-4 md:col-span-6">
+            <div class="text-center mb-12">
+              <h1 class="text-veryDarkBlue text-2xl font-bold mb-3">
+                Frequently Asked Questions
+              </h1>
+              <p class="text-grayishBlue">
+                Here are some of our FAQs. If you have any other questions you’d
+                like answered please feel free to email us.
+              </p>
+            </div>
+
+            <!-- ACCORDION -->
+            <div>
+              <button
+                id="accordionBtn"
+                class="flex justify-between items-center w-full p-3 border border-x-0">
+                What is Bookmark?
+                <img src="./images/icon-arrow.svg" class="accordion-icon" />
+              </button>
+              <div class="accordion-body open border">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                  tincidunt justo eget ultricies fringilla. Phasellus blandit
+                  ipsum quis quam ornare mattis.
+                </p>
+              </div>
+            </div>
+            <!-- ACCORDION 2 -->
+
+            <div>
+              <button
+                id="accordionBtn"
+                class="flex justify-between items-center w-full p-3 border border-x-0">
+                How can I request a new browser?
+                <img src="./images/icon-arrow.svg" class="accordion-icon" />
+              </button>
+              <div class="accordion-body border">
+                <p>
+                  Vivamus luctus eros aliquet convallis ultricies. Mauris augue
+                  massa, ultricies non ligula. Suspendisse imperdiet. Vivamus
+                  luctus eros aliquet convallis ultricies. Mauris augue massa,
+                  ultricies non ligula. Suspendisse imperdie tVivamus luctus
+                  eros aliquet convallis ultricies. Mauris augue massa,
+                  ultricies non ligula. Suspendisse imperdiet.
+                </p>
+              </div>
+            </div>
+            <!-- ACCORDION 3-->
+            <div>
+              <button
+                id="accordionBtn"
+                class="flex justify-between items-center w-full p-3 border border-x-0">
+                Is there a mobile app?
+                <img src="./images/icon-arrow.svg" class="accordion-icon" />
+              </button>
+              <div class="accordion-body border">
+                <p>
+                  Sed consectetur quam id neque fermentum accumsan. Praesent
+                  luctus vestibulum dolor, ut condimentum urna vulputate eget.
+                  Cras in ligula quis est pharetra mattis sit amet pharetra
+                  purus. Sed sollicitudin ex et ultricies bibendum.
+                </p>
+              </div>
+            </div>
+            <!-- ACCORDION 4-->
+            <div>
+              <button
+                id="accordionBtn"
+                class="flex justify-between items-center w-full p-3 border border-x-0">
+                What about other Chromium browsers?
+                <img src="./images/icon-arrow.svg" class="accordion-icon" />
+              </button>
+              <div class="accordion-body border">
+                <p>
+                  Integer condimentum ipsum id imperdiet finibus. Vivamus in
+                  placerat mi, at euismod dui. Aliquam vitae neque eget nisl
+                  gravida pellentesque non ut velit.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex justify-center mt-7">
+              <button
+                class="bg-veryDarkBlue py-2 px-4 rounded-[7px] text-white border hover:bg-white hover:text-veryDarkBlue hover:border-veryDarkBlue transition duration-300 ease-in-out">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--=========================  NEWSLETTER ======================================-->
+      <section class="bg-softBlue py-12">
+        <div class="grid grid-12">
+          <div
+            class="mx-3 col-span-full sm:col-span-10 sm:col-start-2 md:col-start-6 md:col-span-6">
+            <div class="flex flex-col gap-8 items-center md:items-start">
+              <h5 class="text-white text-center uppercase text-sm">
+                35,000+ already joined
+              </h5>
+              <h2 class="text-2xl text-white">
+                Stay up-to-date with what we’re doing
+              </h2>
+
+              <div class="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  placeholder="enter your email address"
+                  class="py-2 px-4 focus:outline-none focus:ring-2 focus:ring-veryDarkBlue required:border-red-500 valid:border-green-500" />
+                <input
+                  type="submit"
+                  class="bg-softRed uppercase py-2 px-4 rounded-sm text-white border hover:bg-white hover:text-softRed hover:border-softRed transition duration-300 ease-in-out cursor-pointer"
+                  value="Contact Us" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--=============================== FOOTER =========================================-->
+
+    <footer class="bg-veryDarkBlue py-5">
+      <div
+        class="container flex flex-col md:flex-row items-center justify-between">
+        <div class="flex flex-col md:flex-row gap-7 text-white uppercase">
+          <img
+            src="./images/logo-bookmark.svg"
+            alt="logo-bookmark"
+            class="bg-white" />
+          <ul class="flex gap-5">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#"> Contact</a></li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="#"
+            ><img src="./images/icon-facebook.svg" alt="icon-facebook"
+          /></a>
+          <a href="#">
+            <img src="./images/icon-twitter.svg" alt="icon-twitter"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
